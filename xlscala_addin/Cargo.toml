@@ -1,0 +1,30 @@
+[package]
+authors = ["Sebastien Lapedra"]
+description = "Excel Scala AddIn, re-written in Rust and targeting Scala 3 for modern usage"
+name = "xlscala_addin"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = []
+
+[dependencies]
+macros = { path = "macros" }
+bincode = "^1"
+lazy_static = "1.4.0"
+log = "0.4.21"
+serde = "^1"
+serde_derive = "^1"
+simplelog = "0.12.2"
+widestring = "*"
+winapi = {version = "*", features = ["winuser", "libloaderapi", "debugapi"]}
+circular-buffer = "0.1.7"
+thiserror = "1.0.61"
+typed-builder = "0.18.2"
+
+[lib]
+name = "xlscala_addin"
+crate-type = ["cdylib"]
+test = true
+bench = false
+
